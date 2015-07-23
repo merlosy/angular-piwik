@@ -1,4 +1,4 @@
-# angular-piwik  [![Build Status](https://travis-ci.org/mike-spainhower/angular-piwik.png?branch=master)](https://travis-ci.org/mike-spainhower/angular-piwik)
+# angular-piwik  [![Build Status](https://travis-ci.org/merlosy/angular-piwik.png?branch=master)](https://travis-ci.org/merlosy/angular-piwik)
 
 Angular service for piwik tracking
 
