@@ -52,7 +52,7 @@ Attributes prefixed with <code>ngp-</code> are Piwik Javascript tracker methods,
 
 Once this element is present in the page, you may inject the <code>Piwik</code> service into your controllers.  The Piwik service object has all the same methods as the tracker returned by `getTracker` or `getAsyncTracker` on the raw `Piwik` object.
 
-## Advanced use
+### Advanced use
 
 You can also insert the previous tag as a configurable component:
 ```
