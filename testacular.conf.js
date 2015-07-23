@@ -10,9 +10,11 @@ basePath = './';
 files = [
   JASMINE,
   JASMINE_ADAPTER,
-  'vendor/angular.js',
-  'vendor/angular-*.js',
-  'test/vendor/angular-mocks.js',
+  'bower_components/angular/angular.min.js',
+  'bower_components/angular/angular-mocks.js',
+  //'vendor/angular.js',
+  //'vendor/angular-*.js',
+  //'test/vendor/angular-mocks.js',
   'dist/*.js',
   'test/*.js'
 ];
