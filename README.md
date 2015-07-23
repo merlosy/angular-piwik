@@ -41,12 +41,41 @@ You must add <code>piwik</code> module as a dependency to your app.  For example
 The ngp-piwik html element must be added to the page somewhere.  Currently, only one per page is supported (Piwik async tracker limitation).
 
 Add to page:
-
-    <ngp-piwik ngp-set-js-url="<host>/piwik.js" ngp-set-tracker-url="<host>/piwik.php" ngp-set-site-id="<id>"> </ngp-piwik>
+```
+    <ngp-piwik ngp-set-js-url="<host>/piwik.js" 
+        ngp-set-tracker-url="<host>/piwik.php" 
+        ngp-set-site-id="<id>"> 
+    </ngp-piwik>
+```
 
 Attributes prefixed with <code>ngp-</code> are Piwik Javascript tracker methods, just dash-separated rather than camel cased.  All Piwik tracker methods are supported.
 
 Once this element is present in the page, you may inject the <code>Piwik</code> service into your controllers.  The Piwik service object has all the same methods as the tracker returned by `getTracker` or `getAsyncTracker` on the raw `Piwik` object.
+
+## Advanced use
+
+You can also insert the previous tag as a configurable component:
+```
+<div ng-if="piwikConfig.active">
+  <ngp-piwik ngp-set-js-url="{{piwikConfig.urlJs}}" 
+      ngp-set-tracker-url="{{piwikConfig.urlPhp}}" 
+      ngp-set-site-id="{{piwikConfig.siteId}}"> 
+  </ngp-piwik>
+</div>
+```
+using a definition of your constant like:
+```
+ app.constant('piwikConfig', {
+    	active: true,
+        urlJs: "http://mypiwiksite.com/piwik.js",
+        urlPhp: "http://mypiwiksite.com/piwik.php",
+        siteId : 3
+    });
+```
+and insert it in your ApplicationController:
+```
+$scope.piwikConfig = piwikConfig;
+```
 
 ## Errata
 
